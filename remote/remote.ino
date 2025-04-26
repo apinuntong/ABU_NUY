@@ -60,10 +60,12 @@ void loop() {
       btnRB = xboxController.xboxNotif.btnRB;
       trigLT = xboxController.xboxNotif.trigLT;
       trigRT = xboxController.xboxNotif.trigRT;
+      btnDirUp = xboxController.xboxNotif.btnDirUp;
       if (btnRB == 1) digitalWrite(relay_PIN_4, 1);
       if (btnLB == 1) digitalWrite(relay_PIN_4, 0);
-      if (trigRT > 500){digitalWrite(relay_PIN_3, 1); delay(200);digitalWrite(relay_PIN_1, 1);}
-      if (trigLT > 500) digitalWrite(relay_PIN_1, 0);
+      if (trigRT > 500){digitalWrite(relay_PIN_3, 1); delay(200);digitalWrite(relay_PIN_1, 1);delay(200);digitalWrite(relay_PIN_1, 0);}
+      if (trigLT > 500){digitalWrite(relay_PIN_3, 1); delay(200);digitalWrite(relay_PIN_1, 1);delay(50);digitalWrite(relay_PIN_1, 0);}
+      if(btnDirUp == 1){digitalWrite(relay_PIN_8, 0);delay(100);digitalWrite(relay_PIN_8, 1);}
       //      digitalWrite(relay_PIN_1, btnY);
       //      digitalWrite(relay_PIN_2, btnX);
       //      digitalWrite(relay_PIN_3, btnB);
