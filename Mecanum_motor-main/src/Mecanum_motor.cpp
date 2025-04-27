@@ -21,9 +21,9 @@ void Mecanum::begin() {
 	delay(180);
 }
 void Mecanum::Set_motorxyz(float _valuex, float _valuey, float _valuez){
-	_valuex = value_limit(_valuex, -1.0, 1.0);
-    _valuey = value_limit(_valuey, -1.0, 1.0);
-    _valuez = value_limit(_valuez, -1.0, 1.0);
+	_valuex = value_limit(_valuex, -10.0, 10.0);
+    _valuey = value_limit(_valuey, -10.0, 10.0);
+    _valuez = value_limit(_valuez, -10.0, 10.0);
     Inmo.x = _valuex;
     Inmo.y = _valuey;
     Inmo.z = _valuez;
